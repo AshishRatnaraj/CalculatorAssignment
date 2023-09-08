@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.calculator.presentation.CalculatorScreen
 import com.example.calculator.presentation.CalculatorState
 import com.example.calculator.ui.theme.CalculatorTheme
 

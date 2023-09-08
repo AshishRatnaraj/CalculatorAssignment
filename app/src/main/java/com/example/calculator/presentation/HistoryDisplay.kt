@@ -3,6 +3,7 @@ package com.example.calculator.presentation
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
@@ -14,10 +15,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.calculator.ui.theme.CalculatorTheme
 import com.example.calculator.ui.theme.screenBackground
-import java.lang.reflect.Modifier
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 
 @Composable
-fun HistoryDisplay(state: CalculatorState, modifier: Modifier) {
+fun HistoryDisplay(state: CalculatorState, modifier: Modifier){
 
     val listState = rememberLazyListState()
     LaunchedEffect(state.equations.size){
@@ -60,7 +62,7 @@ fun HistoryPreview(){
       state = state.copy(
           equations = listOf("7 x /7 =49", "16/2 = 8", "1 + 2 = 3")
       )
-       HistoryDisplay(state = state)
+       HistoryDisplay(state = state,Modifier)
   }
 
 }

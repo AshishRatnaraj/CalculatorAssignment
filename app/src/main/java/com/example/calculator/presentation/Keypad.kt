@@ -10,6 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.core.text.isDigitsOnly
 import com.example.calculator.domain.ButtonAction
 import com.example.calculator.domain.ButtonData
 import com.example.calculator.domain.MathOperation
@@ -18,7 +20,7 @@ import com.example.calculator.ui.theme.CalculatorTheme
 
 
 @Composable
-fun keypad(onButtonPress:(ButtonAction)-> Unit) {
+fun Keypad(onButtonPress:(ButtonAction)-> Unit) {
     val clear = { onButtonPress(ButtonAction.Clear) }
     val backspace = { onButtonPress(ButtonAction.Backspace) }
     val negate = { onButtonPress(ButtonAction.Negation) }
@@ -83,17 +85,18 @@ fun BuildRow(row: List<ButtonData>) {
         modifier = Modifier
             .fillMaxWidth()
     ) {
-        for (item in row)
+        for (item in row) {
             Spacer(modifier = Modifier.width(2.dp))
             CalculatorButton(
                 button = item,
-                modifier = Modifier.weight(if ())
+                modifier = Modifier.weight(1f)
             )
 
-        Spacer(modifier = Modifier.width(2.dp))
+            Spacer(modifier = Modifier.width(2.dp))
+        }
     }
     Spacer(modifier = Modifier.height(2.dp))
-
+}
     @Composable
     fun CalculatorButton(button: ButtonData, modifier: Modifier = Modifier) {
         var color = Blue
@@ -119,7 +122,7 @@ fun BuildRow(row: List<ButtonData>) {
         ) {
             Text(
                 text = button.text,
-                fontSize = 34.dp,
+                fontSize = 34.sp,
                 color = textColor
             )
         }
@@ -132,13 +135,13 @@ fun BuildRow(row: List<ButtonData>) {
              Keypad {}
          }
          }
-    }
 
 
 
-      )
 
-    }
+
+
+
 
 
 
