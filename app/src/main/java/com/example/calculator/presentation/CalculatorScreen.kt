@@ -11,7 +11,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.calculator.domain.ButtonAction
-import com.example.calculator.presentation.CalculatorState
 import com.example.calculator.domain.MathOperation
 import com.example.calculator.ui.theme.CalculatorTheme
 import com.example.calculator.ui.theme.backgroundGray

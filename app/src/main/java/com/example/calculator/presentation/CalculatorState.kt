@@ -9,4 +9,6 @@ data class CalculatorState(
     val operation: MathOperation? = null,
     val currentEquation: String = "",
     val equations: List<String> = emptyList(),
-    )
+    ) {
+
+}

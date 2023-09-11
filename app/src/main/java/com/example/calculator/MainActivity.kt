@@ -6,8 +6,9 @@ import androidx.activity.compose.setContent
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.calculator.presentation.CalculatorScreen
-import com.example.calculator.presentation.CalculatorState
+import com.example.calculator.presentation.CalculatorViewModel
 import com.example.calculator.ui.theme.CalculatorTheme
 
 class MainActivity : ComponentActivity() {
@@ -15,10 +16,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             CalculatorTheme {
-                val state = CalculatorState()
+                val viewModel = viewModel<CalculatorViewModel>()
+                val state = viewModel.state
                 CalculatorScreen(
                     state = state,
-                    onButtonPress = {}
+                    onButtonPress = viewModel::onButton
                 )
             }
         }

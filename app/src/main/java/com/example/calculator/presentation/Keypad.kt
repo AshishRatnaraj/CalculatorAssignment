@@ -39,7 +39,7 @@ fun Keypad(onButtonPress:(ButtonAction)-> Unit) {
     val row1 = listOf(
         ButtonData(text = "AC" , onPress = clear ),
         ButtonData(text = "<<", onPress = backspace ),
-        ButtonData(text = "+/-", onPress = negate ),
+        ButtonData(text = "+-", onPress = negate ),
         ButtonData(text = "/", onPress = division),
     )
 
